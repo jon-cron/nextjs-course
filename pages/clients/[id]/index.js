@@ -5,7 +5,12 @@ const ClientPage = () => {
   console.log(router.query);
 
   const handleSeeHome = () => {
-    router.push("/clients/max/homes");
+    // NOTE both ways work
+    // router.push("/clients/max/homes");
+    router.push({
+      pathname: "/clients/[id]/[clientHomeId]",
+      query: { id: "max", clientHomeId: "allHomes" },
+    });
   };
   return (
     <div>
